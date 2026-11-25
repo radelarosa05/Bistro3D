@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            user-select: none;
+            overflow: hidden;
+            background-color: #0f172a;
+        }
+
+        .font-game {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        /* Canvas styling */
+        #canvas-container {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* Glassmorphism UI panel styling */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Floating 3D projection bubbles */
+        .world-bubble {
+            position: absolute;
+            transform: translate(-50%, -100%);
+            pointer-events: none;
+            transition: transform 0.1s ease-out;
+            z-index: 10;
+        }
+
+        /* Custom scrollbars */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 3px;
+        }
+
+        /* Animations */
+        @keyframes floatAnim {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .animate-float {
+            animation: floatAnim 2.5s ease-in-out infinite;
+        }
+
+        @keyframes stinkPulse {
+            0%, 100% { opacity: 0.4; transform: scale(0.95); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .animate-stink {
+            animation: stinkPulse 1.2s ease-in-out infinite;
+        }
